@@ -1,0 +1,31 @@
+.glass-bg {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-top: 20px;
+    color: #fff;
+  }
+  
+  .aqi-box {
+    text-align: center;
+  }
+  
+  .main .chart-area #pie-chart {
+    max-width: 100%;
+    max-height: 350px;
+    margin: auto;
+    display: block;
+  }
+  
+  .search-section input {
+    width: 100%;
+  }
+  
+  .pollutants-level table th,
+  .pollutants-level table td {
+    vertical-align: middle;
+  }

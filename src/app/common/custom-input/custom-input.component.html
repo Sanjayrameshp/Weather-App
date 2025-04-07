@@ -1,0 +1,6 @@
+<div class="custom-input">
+    @if (label) {
+        <label for="custom-input"></label>
+    }
+    <input id="custom-input" class="form-control" [type]="type" [value]="inputValue" (input)="onInputValueChange($event)"/>
+</div>

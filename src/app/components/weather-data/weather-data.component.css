@@ -1,0 +1,171 @@
+.outer-layer {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-section {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-button {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 20px;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.search-button:active {
+  background-color: #004494;
+  transform: scale(0.98);
+}
+
+.search-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.search-icon {
+  font-size: 18px;
+}
+
+.main-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-1-details {
+  text-align: center;
+  color: #ccc;
+}
+
+h1.section-1-details {
+  padding-top: 20px;
+  font-size: 48px;
+}
+
+.section-1 {
+  margin-top: 30px;
+}
+
+.section-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-2 .weather-icon {
+  width: 200px;
+  height: auto;
+  max-width: 400px;
+  max-height: 400px;
+}
+
+/* Glass Effect Base */
+.glass-bg {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Apply Glass Effect */
+.sub-section {
+  color: #ffffff;
+  margin-top: 30px;
+  padding: 20px 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sub-section-items {
+  text-align: center;
+  margin-top: 25px;
+}
+
+/* Updated Hour Section - moved to right column */
+.hour-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 20px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.hour-section::-webkit-scrollbar {
+  width: 6px;
+}
+
+.hour-section::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.hour-section-items {
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+.hour-icon {
+  width: 60px;
+  height: 60px;
+}
+
+.days-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  padding: 20px 0;
+  border-radius: 10px;
+}
+
+.days-section .col-md-8 {
+  background-color: rgb(0, 0, 3);
+  padding: 20px 0;
+  border-radius: 10px;
+}
+
+.days-section-items {
+  color: #ffffff;
+  text-align: center;
+  border-bottom: 1px solid rgb(206, 135, 2);
+  padding: 10px 0;
+}

@@ -1,0 +1,75 @@
+<div class="main">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="search-section">
+                    <div class="row" style="width: 100%;">
+                        <div class="col-md-10"><app-custom-input [type]="'text'" [inputValue]="cityName" (valueChange)="onCitNameChange($event)"></app-custom-input></div>
+                        <div class="col-md-2"><button class="btn btn-primary" (click)="getWeatherData()"><i class="fa-solid fa-magnifying-glass"></i></button></div>
+                    </div>
+                </div>
+        
+                <div class="main-section" *ngIf="currentweatherData?.weather">
+                    <div class="section-1 col-md-6">
+                        <h3 class="section-1-details">{{currentweatherData.name}}</h3>
+                        <h4 class="section-1-details">{{currentweatherData.weather[0].main}}</h4>
+                        <p class="section-1-details">{{currentweatherData.weather[0].description}}</p>
+        
+                        <h1 class="section-1-details">{{currentweatherData.main.temp}}°C</h1>
+                    </div>
+                    <div class="section-2 col-md-6">
+                        <img class="weather-icon" [src]="iconUrl" alt="weather image">
+                    </div>
+                </div>
+        
+                <div class="sub-section" *ngIf="currentweatherData?.weather">
+                    <div class="row">
+                        <div class="col-md-6 sub-section-items">
+                            <span><i class="fa-solid fa-droplet"></i>&nbsp;Humidity</span>
+                            <h3>{{currentweatherData?.main?.humidity}}&nbsp;%</h3>
+                        </div>
+                        <div class="col-md-6 sub-section-items">
+                            <span><i class="fa-solid fa-compress"></i>&nbsp;Pressure</span>
+                            <h3>{{currentweatherData?.main?.pressure}}&nbsp;Pa</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 sub-section-items">
+                            <span><i class="fa-solid fa-wind"></i>&nbsp;Wind Speed</span>
+                            <h3>{{currentweatherData?.wind?.speed}}&nbsp;m/s</h3>
+                        </div>
+                        <div class="col-md-6 sub-section-items">
+                            <span><i class="fa-solid fa-wind"></i>&nbsp;Wind Direction</span>
+                            <h3>{{currentweatherData?.wind?.deg}}&nbsp;deg</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="no-data" *ngIf="!currentweatherData">
+                    <div class="row">
+                        <h2>No Data Available, Please try again</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="hour-section" *ngIf="hourlyWeatherData">
+                        <div class="hour-section-items" *ngFor="let hourData of hourlyWeatherData; let i = index;">
+                            <p>{{hourData.dt_txt | date:"EEEE"}}</p>
+                            <h6>{{hourData.dt_txt | date:"shortTime"}}</h6>
+                            <img class="hour-icon" [src]="hourData.weather[0].icon | weatherIcon">
+                            <h5>{{hourData.weather[0].main}}</h5>
+                            <h5>{{hourData.main.temp}}°C</h5>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!-- section for showing bar chart -->
+        <div class="row" *ngIf="hourlyWeatherData">
+            <div class="col-md-12">
+                <div class="graph-area">
+                    <canvas id="bar-chart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

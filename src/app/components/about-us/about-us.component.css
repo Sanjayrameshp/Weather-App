@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #d8cdcd;
+  }
+  
+  .about-hero {
+    text-align: center;
+    background: linear-gradient(to right, #87ceeb, #f0f8ff);
+    padding: 50px 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+  }
+  
+  .about-hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #004d66;
+  }
+  
+  .about-hero p {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .about-section {
+    margin-bottom: 30px;
+  }
+  
+  .about-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #1f99c2;
+  }
+  
+  .about-section p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .about-section ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .about-section ul li {
+    font-size: 16px;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .about-contact {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 30px 20px;
+    border-radius: 10px;
+  }
+  
+  .about-contact a {
+    color: #007acc;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .about-contact a:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 600px) {
+    .about-hero h1 {
+      font-size: 28px;
+    }
+  
+    .about-section h2 {
+      font-size: 20px;
+    }
+  }

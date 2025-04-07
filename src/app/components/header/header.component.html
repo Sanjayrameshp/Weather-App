@@ -1,0 +1,18 @@
+<div class="main">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="logo" routerLink="/home">
+                <img src="/cloudy.png" alt="Logo">
+                <h3 style="font-family: 'Lobster', cursive;">ClimaSphere</h3>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="link-section">
+                <div class="link home-link" [routerLink]="'/home'"><span>Home</span></div>
+                <div class="link aqi-link" [routerLink]="'/aqi'" ><span>AQI</span></div>
+                <div class="link map-link" [routerLink]="'/maps'"><span>Map</span></div>
+                <div class="link about-link" [routerLink]="'/about-us'"><span>About Us</span></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="main">
+    <div class="container-fluid">
+      <div class="row">
+        <h2 style="text-align: center;">Air Quality Index</h2>
+      </div>
+  
+      <!-- Search Section -->
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="search-section glass-bg">
+            <div class="row w-100">
+              <div class="col-md-10">
+                <app-custom-input [type]="'text'" [inputValue]="cityName" (valueChange)="getCityName($event)"></app-custom-input>
+              </div>
+              <div class="col-md-2 d-flex align-items-center">
+                <button class="btn btn-primary w-100" (click)="getAirQualityIndex()">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- AQI & Chart -->
+      <div class="row" *ngIf="currentAQIData">
+        <div class="col-md-6">
+          <div class="aqi-box glass-bg">
+            <h4>Air Quality Index</h4>
+            <h3>
+              <span>AQI :</span>
+              <span style="margin-left: 10px;">{{currentAQIData?.list[0].main.aqi}}</span>
+            </h3>
+            <h3>{{airQualityDesc}}</h3>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="chart-area glass-bg">
+            <canvas id="pie-chart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="row" *ngIf="!currentAQIData">
+        <h2>No data avaiable</h2>
+      </div>
+  
+      <!-- Pollutants Table -->
+      <div class="row" *ngIf="currentAQIData">
+        <div class="col-md-12">
+          <div class="pollutants-level glass-bg">
+            <table class="table table-dark mb-0">
+              <thead>
+                <tr>
+                  @for (item of airQualityArray; track item.key) {
+                    <th style="text-align: center;">
+                      {{item.key}} <br />
+                      <span style="font-size: 10px;">({{item.key | getPollutantName}})</span>
+                    </th>
+                  }
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  @for (item of airQualityArray; track item.value) {
+                    <td style="text-align: center;">
+                      {{item.value}} <br />
+                      <span style="font-size: 10px;">( μg/m3 )</span>
+                    </td>
+                  }
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
