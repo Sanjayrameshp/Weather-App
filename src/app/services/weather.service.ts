@@ -24,7 +24,6 @@ export class WeatherService {
     const url = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=" + this.API_KEY;
     return this.http.get(url).pipe(
       tap((data) => {
-        console.log(`GET GEO LOCATION Request:`, data);
       }),
       catchError(this.handleError)
     );
@@ -35,7 +34,6 @@ export class WeatherService {
     const url = "https://api.openweathermap.org/data/2.5/weather?lat=" + data.lat + "&lon=" + data.long + "&appid=" + this.API_KEY + "&units=metric";
     return this.http.get(url).pipe(
       tap((data) => {
-        console.log(`GET CURRENT WEATHER Request:`, data);
         
       }),catchError(this.handleError)
     )
@@ -46,7 +44,6 @@ export class WeatherService {
     const url = "https://api.openweathermap.org/data/2.5/forecast?lat=" + data.lat +"&lon=" + data.long + "&appid=" + this.API_KEY + "&units=metric"
     return this.http.get(url).pipe(
       tap((data) => {
-        console.log(`GET HOURLY WEATHER Request:`, data)
       }),catchError(this.handleError)
     )
   }
@@ -64,7 +61,6 @@ export class WeatherService {
 
     return this.http.get<any>(url, options).pipe(
       tap((data) => {
-        console.log(`GET DAY WEATHER Request:`, data)
       }),catchError(this.handleError)
     )
   }

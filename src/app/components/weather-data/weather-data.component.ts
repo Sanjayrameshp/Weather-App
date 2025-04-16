@@ -42,7 +42,6 @@ export class WeatherDataComponent implements OnInit {
       this.weatherService.showloading(true);
       //  to get lattittude & longittude of city
       this.weatherService.getGeoLocation(this.cityName).subscribe((response:any) => {
-        console.log("RESPONSE ... ", response);
         
         if(response && response.length>0) {
           this.lattitude = response[0].lat;
@@ -121,12 +120,10 @@ export class WeatherDataComponent implements OnInit {
 
   //  Function for rendering the line chart
   RenderBarChart(labelData: string[], valueData: string[]) {
-  // Destroy old chart if it exists
   if (this.chartInstance) {
     this.chartInstance.destroy();
   }
 
-  // Create and assign new chart instance
   this.chartInstance = new Chart('bar-chart', {
     type: 'bar',
     data: {

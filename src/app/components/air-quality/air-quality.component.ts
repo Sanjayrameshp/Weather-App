@@ -40,6 +40,7 @@ export class AirQualityComponent implements OnInit {
   pieChartLabel : string[] = [];
   pieChartData : string[] = [];
   pieChart : any = null;
+  aqiValue : number = 0;
   
 
   qualitativeData: { [key: number]: string } = {
@@ -77,7 +78,7 @@ export class AirQualityComponent implements OnInit {
             if(indexData) {
               this.currentAQIData = indexData;
               this.weatherService.showloading(false);
-              console.log("this.currentAQIData ", this.currentAQIData);
+              this.aqiValue = this.currentAQIData?.list[0].main.aqi;
               
               let indexValue = this.currentAQIData.list[0].main.aqi;
               this.pieChartData = [];
